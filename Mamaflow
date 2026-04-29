@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>МамаФлоу — йога и пилатес с малышом</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FAF7F2;
+    --warm: #F0EAE0;
+    --sage: #8A9E8C;
+    --sage-dark: #5C7A5E;
+    --terracotta: #C4714A;
+    --terra-light: #E8A882;
+    --brown: #6B4F3A;
+    --text: #2E2620;
+    --text-muted: #8C7B70;
+    --blush: #F0D5C8;
+  }
+
+- { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+font-family: ‘Jost’, sans-serif;
+background: var(–cream);
+color: var(–text);
+overflow-x: hidden;
+}
+
+/* HERO */
+.hero {
+min-height: 100vh;
+display: grid;
+grid-template-columns: 1fr 1fr;
+position: relative;
+overflow: hidden;
+}
+
+.hero-left {
+background: var(–sage);
+display: flex;
+align-items: flex-end;
+padding: 80px 60px;
+position: relative;
+overflow: hidden;
+}
+
+.hero-left::before {
+content: ‘’;
+position: absolute;
+top: -100px; left: -100px;
+width: 500px; height: 500px;
+border-radius: 50%;
+background: rgba(255,255,255,0.08);
+}
+
+.hero-left::after {
+content: ‘’;
+position: absolute;
+bottom: -60px; right: -60px;
+width: 300px; height: 300px;
+border-radius: 50%;
+background: var(–sage-dark);
+opacity: 0.4;
+}
+
+.hero-visual {
+position: relative;
+z-index: 2;
+}
+
+.hero-circles {
+display: flex;
+gap: 16px;
+margin-bottom: 40px;
+align-items: flex-end;
+}
+
+.circle-fig {
+border-radius: 50%;
+background: rgba(255,255,255,0.15);
+border: 1px solid rgba(255,255,255,0.3);
+display: flex;
+align-items: center;
+justify-content: center;
+font-family: ‘Cormorant Garamond’, serif;
+color: white;
+font-size: 11px;
+letter-spacing: 0.05em;
+text-align: center;
+line-height: 1.3;
+flex-shrink: 0;
+}
+
+.circle-fig.lg { width: 140px; height: 140px; font-size: 13px; }
+.circle-fig.md { width: 100px; height: 100px; }
+.circle-fig.sm { width: 72px; height: 72px; font-size: 10px; }
+
+.hero-tagline {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 42px;
+font-weight: 300;
+color: white;
+line-height: 1.15;
+font-style: italic;
+}
+
+.hero-right {
+background: var(–cream);
+display: flex;
+flex-direction: column;
+justify-content: center;
+padding: 80px 70px 80px 80px;
+}
+
+.badge {
+display: inline-block;
+border: 1px solid var(–terracotta);
+color: var(–terracotta);
+font-size: 10px;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+padding: 6px 16px;
+border-radius: 20px;
+margin-bottom: 32px;
+font-weight: 500;
+}
+
+.hero-title {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 68px;
+font-weight: 300;
+line-height: 1.05;
+color: var(–text);
+margin-bottom: 24px;
+}
+
+.hero-title span {
+color: var(–terracotta);
+font-style: italic;
+}
+
+.hero-subtitle {
+font-size: 15px;
+color: var(–text-muted);
+line-height: 1.7;
+max-width: 380px;
+margin-bottom: 48px;
+font-weight: 300;
+}
+
+.hero-cta {
+display: flex;
+gap: 16px;
+align-items: center;
+}
+
+.btn-primary {
+background: var(–terracotta);
+color: white;
+border: none;
+padding: 16px 40px;
+font-family: ‘Jost’, sans-serif;
+font-size: 13px;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+cursor: pointer;
+border-radius: 50px;
+font-weight: 500;
+transition: all 0.3s;
+text-decoration: none;
+display: inline-block;
+}
+
+.btn-primary:hover { background: var(–brown); transform: translateY(-2px); }
+
+.btn-ghost {
+color: var(–text-muted);
+font-size: 13px;
+text-decoration: underline;
+text-underline-offset: 4px;
+cursor: pointer;
+}
+
+/* PHILOSOPHY */
+.philosophy {
+background: var(–brown);
+padding: 100px 80px;
+display: grid;
+grid-template-columns: 1fr 2fr;
+gap: 80px;
+align-items: center;
+}
+
+.section-label {
+font-size: 10px;
+letter-spacing: 0.25em;
+text-transform: uppercase;
+color: var(–terra-light);
+writing-mode: vertical-rl;
+text-orientation: mixed;
+transform: rotate(180deg);
+align-self: flex-start;
+padding-top: 8px;
+}
+
+.philosophy-content h2 {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 50px;
+font-weight: 300;
+color: white;
+line-height: 1.2;
+margin-bottom: 32px;
+font-style: italic;
+}
+
+.philosophy-content p {
+color: rgba(255,255,255,0.7);
+font-size: 15px;
+line-height: 1.8;
+font-weight: 300;
+margin-bottom: 16px;
+max-width: 600px;
+}
+
+.pillars {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 24px;
+margin-top: 48px;
+}
+
+.pillar {
+border-top: 1px solid rgba(255,255,255,0.2);
+padding-top: 20px;
+}
+
+.pillar-num {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 36px;
+color: var(–terra-light);
+font-weight: 300;
+margin-bottom: 8px;
+}
+
+.pillar h4 {
+color: white;
+font-size: 13px;
+font-weight: 500;
+letter-spacing: 0.05em;
+margin-bottom: 8px;
+text-transform: uppercase;
+}
+
+.pillar p {
+color: rgba(255,255,255,0.55) !important;
+font-size: 13px !important;
+line-height: 1.6 !important;
+}
+
+/* ANATOMY NOTE */
+.anatomy {
+background: var(–blush);
+padding: 80px;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 80px;
+align-items: start;
+}
+
+.anatomy h2 {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 44px;
+font-weight: 300;
+color: var(–brown);
+line-height: 1.2;
+margin-bottom: 24px;
+font-style: italic;
+}
+
+.anatomy p {
+color: var(–brown);
+font-size: 14px;
+line-height: 1.8;
+font-weight: 300;
+margin-bottom: 16px;
+opacity: 0.85;
+}
+
+.recovery-stages {
+display: flex;
+flex-direction: column;
+gap: 0;
+}
+
+.stage {
+display: flex;
+gap: 20px;
+padding: 20px 0;
+border-bottom: 1px solid rgba(107,79,58,0.15);
+}
+
+.stage:last-child { border-bottom: none; }
+
+.stage-dot {
+width: 10px;
+height: 10px;
+border-radius: 50%;
+background: var(–terracotta);
+flex-shrink: 0;
+margin-top: 5px;
+}
+
+.stage h4 {
+font-size: 13px;
+font-weight: 500;
+color: var(–brown);
+text-transform: uppercase;
+letter-spacing: 0.08em;
+margin-bottom: 6px;
+}
+
+.stage p {
+font-size: 13px;
+margin-bottom: 0;
+line-height: 1.6;
+}
+
+/* PROGRAMS */
+.programs {
+padding: 100px 80px;
+background: var(–cream);
+}
+
+.programs-header {
+display: flex;
+justify-content: space-between;
+align-items: flex-end;
+margin-bottom: 64px;
+}
+
+.programs-header h2 {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 52px;
+font-weight: 300;
+line-height: 1.1;
+max-width: 400px;
+}
+
+.programs-header p {
+color: var(–text-muted);
+font-size: 14px;
+max-width: 300px;
+line-height: 1.7;
+text-align: right;
+}
+
+.age-tabs {
+display: flex;
+gap: 12px;
+margin-bottom: 48px;
+}
+
+.age-tab {
+padding: 10px 28px;
+border-radius: 50px;
+border: 1.5px solid var(–warm);
+background: transparent;
+font-family: ‘Jost’, sans-serif;
+font-size: 13px;
+cursor: pointer;
+color: var(–text-muted);
+transition: all 0.25s;
+font-weight: 400;
+}
+
+.age-tab:hover, .age-tab.active {
+background: var(–text);
+border-color: var(–text);
+color: white;
+}
+
+/* PROGRAM CARDS */
+.program-section { display: none; }
+.program-section.active { display: block; }
+
+.program-intro {
+display: grid;
+grid-template-columns: 1fr 2fr;
+gap: 60px;
+margin-bottom: 56px;
+padding: 48px;
+background: var(–warm);
+border-radius: 16px;
+}
+
+.prog-age-badge {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 72px;
+font-weight: 300;
+color: var(–terracotta);
+line-height: 1;
+margin-bottom: 8px;
+}
+
+.prog-age-label {
+font-size: 11px;
+text-transform: uppercase;
+letter-spacing: 0.2em;
+color: var(–text-muted);
+}
+
+.prog-description h3 {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 28px;
+font-weight: 400;
+margin-bottom: 16px;
+font-style: italic;
+}
+
+.prog-description p {
+font-size: 14px;
+line-height: 1.8;
+color: var(–text-muted);
+margin-bottom: 12px;
+}
+
+.focus-chips {
+display: flex;
+flex-wrap: wrap;
+gap: 8px;
+margin-top: 16px;
+}
+
+.chip {
+background: white;
+border: 1px solid rgba(0,0,0,0.08);
+border-radius: 20px;
+padding: 5px 14px;
+font-size: 12px;
+color: var(–brown);
+}
+
+/* WORKOUT CARDS */
+.workouts-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 24px;
+}
+
+.workout-card {
+background: white;
+border-radius: 16px;
+overflow: hidden;
+border: 1px solid rgba(0,0,0,0.05);
+transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.workout-card:hover {
+transform: translateY(-4px);
+box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.card-top {
+padding: 28px 28px 20px;
+position: relative;
+}
+
+.card-num {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 60px;
+font-weight: 300;
+color: var(–warm);
+position: absolute;
+top: 16px;
+right: 20px;
+line-height: 1;
+}
+
+.workout-type {
+display: inline-block;
+font-size: 10px;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+color: var(–terracotta);
+font-weight: 500;
+margin-bottom: 12px;
+}
+
+.workout-card h3 {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 22px;
+font-weight: 400;
+line-height: 1.3;
+margin-bottom: 12px;
+font-style: italic;
+}
+
+.workout-meta {
+display: flex;
+gap: 16px;
+margin-bottom: 16px;
+}
+
+.meta-item {
+font-size: 12px;
+color: var(–text-muted);
+display: flex;
+align-items: center;
+gap: 5px;
+}
+
+.meta-dot {
+width: 5px; height: 5px;
+border-radius: 50%;
+background: var(–sage);
+flex-shrink: 0;
+}
+
+.card-divider {
+height: 1px;
+background: var(–warm);
+margin: 0 28px;
+}
+
+.card-body {
+padding: 20px 28px 28px;
+}
+
+.exercises-list {
+list-style: none;
+display: flex;
+flex-direction: column;
+gap: 8px;
+margin-bottom: 20px;
+}
+
+.exercises-list li {
+font-size: 13px;
+color: var(–text);
+display: flex;
+align-items: flex-start;
+gap: 10px;
+line-height: 1.5;
+}
+
+.ex-num {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 16px;
+color: var(–terracotta);
+flex-shrink: 0;
+font-weight: 600;
+line-height: 1.3;
+}
+
+.baby-note {
+background: var(–blush);
+border-radius: 10px;
+padding: 12px 16px;
+font-size: 12px;
+color: var(–brown);
+line-height: 1.6;
+}
+
+.baby-note strong {
+display: block;
+font-size: 10px;
+text-transform: uppercase;
+letter-spacing: 0.15em;
+margin-bottom: 4px;
+opacity: 0.7;
+}
+
+/* SAFETY */
+.safety {
+background: var(–sage-dark);
+padding: 80px;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 80px;
+}
+
+.safety h2 {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 44px;
+font-weight: 300;
+color: white;
+line-height: 1.2;
+margin-bottom: 32px;
+font-style: italic;
+}
+
+.safety-rules {
+display: flex;
+flex-direction: column;
+gap: 16px;
+}
+
+.rule {
+display: flex;
+gap: 16px;
+align-items: flex-start;
+}
+
+.rule-icon {
+width: 32px;
+height: 32px;
+border-radius: 8px;
+background: rgba(255,255,255,0.15);
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 14px;
+flex-shrink: 0;
+}
+
+.rule-text h4 {
+color: white;
+font-size: 13px;
+font-weight: 500;
+margin-bottom: 4px;
+}
+
+.rule-text p {
+color: rgba(255,255,255,0.65);
+font-size: 13px;
+line-height: 1.6;
+}
+
+.contraindications {
+background: rgba(255,255,255,0.1);
+border-radius: 16px;
+padding: 32px;
+}
+
+.contraindications h3 {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 24px;
+color: white;
+font-style: italic;
+margin-bottom: 20px;
+}
+
+.contraindications ul {
+list-style: none;
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+
+.contraindications li {
+color: rgba(255,255,255,0.75);
+font-size: 13px;
+padding-left: 20px;
+position: relative;
+line-height: 1.5;
+}
+
+.contraindications li::before {
+content: ‘—’;
+position: absolute;
+left: 0;
+color: var(–terra-light);
+}
+
+/* PRODUCT */
+.product {
+padding: 100px 80px;
+background: var(–cream);
+text-align: center;
+}
+
+.product h2 {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 52px;
+font-weight: 300;
+margin-bottom: 16px;
+font-style: italic;
+}
+
+.product-sub {
+color: var(–text-muted);
+font-size: 15px;
+margin-bottom: 64px;
+font-weight: 300;
+}
+
+.packages {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 24px;
+max-width: 900px;
+margin: 0 auto 48px;
+}
+
+.package {
+border: 1.5px solid var(–warm);
+border-radius: 20px;
+padding: 40px 32px;
+text-align: left;
+position: relative;
+transition: all 0.3s;
+background: white;
+}
+
+.package.featured {
+border-color: var(–terracotta);
+background: var(–terracotta);
+}
+
+.package:hover { transform: translateY(-6px); box-shadow: 0 24px 48px rgba(0,0,0,0.1); }
+
+.pack-label {
+font-size: 10px;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+color: var(–text-muted);
+margin-bottom: 16px;
+}
+
+.package.featured .pack-label { color: rgba(255,255,255,0.7); }
+
+.pack-price {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 48px;
+font-weight: 300;
+color: var(–text);
+line-height: 1;
+margin-bottom: 8px;
+}
+
+.package.featured .pack-price { color: white; }
+
+.pack-period {
+font-size: 12px;
+color: var(–text-muted);
+margin-bottom: 24px;
+}
+
+.package.featured .pack-period { color: rgba(255,255,255,0.7); }
+
+.pack-features {
+list-style: none;
+display: flex;
+flex-direction: column;
+gap: 10px;
+margin-bottom: 28px;
+}
+
+.pack-features li {
+font-size: 13px;
+color: var(–text-muted);
+display: flex;
+gap: 8px;
+}
+
+.package.featured .pack-features li { color: rgba(255,255,255,0.85); }
+
+.check { color: var(–sage); }
+.package.featured .check { color: rgba(255,255,255,0.9); }
+
+.pack-btn {
+width: 100%;
+padding: 14px;
+border-radius: 50px;
+border: 1.5px solid var(–text);
+background: transparent;
+font-family: ‘Jost’, sans-serif;
+font-size: 12px;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+cursor: pointer;
+color: var(–text);
+transition: all 0.25s;
+font-weight: 500;
+}
+
+.package.featured .pack-btn {
+background: white;
+border-color: white;
+color: var(–terracotta);
+}
+
+.pack-btn:hover { background: var(–text); color: white; }
+
+/* FOOTER */
+footer {
+background: var(–text);
+color: rgba(255,255,255,0.5);
+padding: 40px 80px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+font-size: 12px;
+letter-spacing: 0.05em;
+}
+
+.footer-logo {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 22px;
+color: white;
+font-style: italic;
+font-weight: 300;
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(30px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-right > * {
+animation: fadeUp 0.8s ease forwards;
+opacity: 0;
+}
+.hero-right > *:nth-child(1) { animation-delay: 0.1s; }
+.hero-right > *:nth-child(2) { animation-delay: 0.25s; }
+.hero-right > *:nth-child(3) { animation-delay: 0.4s; }
+.hero-right > *:nth-child(4) { animation-delay: 0.55s; }
+.hero-right > *:nth-child(5) { animation-delay: 0.7s; }
+
+@media (max-width: 900px) {
+.hero { grid-template-columns: 1fr; }
+.hero-left { min-height: 40vh; padding: 60px 40px; }
+.hero-right { padding: 60px 40px; }
+.hero-title { font-size: 48px; }
+.philosophy, .anatomy, .programs, .safety, .product { padding: 60px 40px; }
+.philosophy { grid-template-columns: 1fr; gap: 40px; }
+.anatomy { grid-template-columns: 1fr; gap: 40px; }
+.programs-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+.programs-header p { text-align: left; }
+.workouts-grid { grid-template-columns: 1fr; }
+.safety { grid-template-columns: 1fr; gap: 40px; }
+.packages { grid-template-columns: 1fr; max-width: 400px; }
+.pillars { grid-template-columns: 1fr; }
+footer { flex-direction: column; gap: 16px; text-align: center; }
+}
+</style>
+
+</head>
+<body>
+
+<!-- HERO -->
+
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-visual">
+      <div class="hero-circles">
+        <div class="circle-fig lg">Мама<br>& малыш</div>
+        <div class="circle-fig md">Йога<br>+<br>Пилатес</div>
+        <div class="circle-fig sm">0—5<br>лет</div>
+      </div>
+      <div class="hero-tagline">Движение,<br>которое<br>объединяет</div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="badge">Программа восстановления и развития</div>
+    <h1 class="hero-title">Мама<span>Флоу</span></h1>
+    <p class="hero-subtitle">Авторская методика на стыке йоги и пилатес для мамы с малышом. Три возрастных программы, безопасное восстановление тела после родов — и полноценное включение ребёнка в каждый урок.</p>
+    <div class="hero-cta">
+      <a href="#programs" class="btn-primary" onclick="document.getElementById('programs').scrollIntoView({behavior:'smooth'}); return false;">Смотреть программы</a>
+      <span class="btn-ghost">Узнать подробнее</span>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+
+<section class="philosophy">
+  <div style="display:flex; align-items:flex-start;">
+    <span class="section-label">Философия</span>
+  </div>
+  <div class="philosophy-content">
+    <h2>Тело помнит. Тело умеет восстановиться.</h2>
+    <p>После родов тело женщины переживает один из самых сложных физиологических переходов в жизни. Брюшная стенка растянута, тазовое дно ослаблено, связки размягчены под действием релаксина — ещё месяцами после рождения ребёнка.</p>
+    <p>Наша методика строится на том, чтобы работать <em>с</em> этими изменениями, а не против них: активировать глубокие стабилизаторы, восстанавливать диастаз, укреплять тазовое дно — постепенно и с удовольствием.</p>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-num">01</div>
+        <h4>Безопасность</h4>
+        <p>Каждое движение проверено с учётом послеродовой анатомии. Никакого преждевременного нагружения.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">02</div>
+        <h4>Связь</h4>
+        <p>Малыш — полноправный участник практики, а не помеха. Контакт и тактильность встроены в каждый урок.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">03</div>
+        <h4>Прогресс</h4>
+        <p>Программы растут вместе с ребёнком. Нагрузка увеличивается по мере восстановления мамы.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ANATOMY -->
+
+<section class="anatomy">
+  <div>
+    <h2>Что происходит с телом после родов</h2>
+    <p>Понимание своей анатомии — это первый шаг к грамотному восстановлению. Мы не торопим процесс и не игнорируем сигналы тела.</p>
+    <p>Программа учитывает: диастаз прямых мышц живота, состояние мышц тазового дна, гипермобильность суставов (связочный аппарат мягкий ещё до 6 месяцев после родов), изменения осанки из-за кормления и ношения ребёнка.</p>
+    <p>Занятия можно начинать с <strong>6–8 недель</strong> после естественных родов и с <strong>8–10 недель</strong> после кесарева — после одобрения врача.</p>
+  </div>
+  <div>
+    <div class="recovery-stages">
+      <div class="stage">
+        <div class="stage-dot"></div>
+        <div>
+          <h4>6–12 недель после родов</h4>
+          <p>Только дыхательные практики, мягкая активация тазового дна, самовытяжение позвоночника. Никакой нагрузки на живот.</p>
+        </div>
+      </div>
+      <div class="stage">
+        <div class="stage-dot"></div>
+        <div>
+          <h4>3–6 месяцев</h4>
+          <p>Постепенное подключение глубоких стабилизаторов. Базовые асаны лёжа и на четвереньках. Проверка на диастаз.</p>
+        </div>
+      </div>
+      <div class="stage">
+        <div class="stage-dot"></div>
+        <div>
+          <h4>6–12 месяцев</h4>
+          <p>Полноценные стоячие позы, баланс, укрепление кора. Подключение упражнений с весом ребёнка.</p>
+        </div>
+      </div>
+      <div class="stage">
+        <div class="stage-dot"></div>
+        <div>
+          <h4>После 1 года</h4>
+          <p>Динамические практики, растяжка, силовые элементы пилатес. Игровой формат с подвижным ребёнком.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+
+<section class="programs" id="programs">
+  <div class="programs-header">
+    <h2>Три программы<br>для трёх<br>возрастов</h2>
+    <p>Каждая программа состоит из 3 тренировок разного формата: восстановительная, тонизирующая и игровая.</p>
+  </div>
+
+  <div class="age-tabs">
+    <button class="age-tab active" onclick="showProgram('p0')">0–12 месяцев</button>
+    <button class="age-tab" onclick="showProgram('p1')">1–3 года</button>
+    <button class="age-tab" onclick="showProgram('p3')">3–5 лет</button>
+  </div>
+
+  <!-- PROGRAM 0–1 -->
+
+  <div class="program-section active" id="p0">
+    <div class="program-intro">
+      <div>
+        <div class="prog-age-badge">0–1</div>
+        <div class="prog-age-label">месяц — год</div>
+      </div>
+      <div class="prog-description">
+        <h3>«Нежный старт» — первый год вместе</h3>
+        <p>Это время самого интенсивного восстановления мамы. Малыш ещё не ходит, не убегает — он с удовольствием лежит рядом, сидит в слинге или на коврике. Это идеальный момент для медленной, внимательной практики.</p>
+        <p>Упражнения строятся вокруг активации глубокого кора, тазового дна и мобильности тазобедренных суставов. Малыш включён через тактильный контакт, зрительный фокус и массаж.</p>
+        <div class="focus-chips">
+          <span class="chip">Тазовое дно</span>
+          <span class="chip">Диастаз</span>
+          <span class="chip">Тазобедренные суставы</span>
+          <span class="chip">Дыхание</span>
+          <span class="chip">Тактильный контакт</span>
+          <span class="chip">Развитие малыша 0–1</span>
+        </div>
+      </div>
+    </div>
+
+```
+<div class="workouts-grid">
+  <!-- Workout 1 -->
+  <div class="workout-card">
+    <div class="card-top">
+      <div class="card-num">01</div>
+      <span class="workout-type">Восстановительная</span>
+      <h3>Дыхание и пробуждение тела</h3>
+      <div class="workout-meta">
+        <span class="meta-item"><span class="meta-dot"></span>30–35 минут</span>
+        <span class="meta-item"><span class="meta-dot"></span>Коврик, подушка</span>
+      </div>
+    </div>
+    <div class="card-divider"></div>
+    <div class="card-body">
+      <ul class="exercises-list">
+        <li><span class="ex-num">1.</span>Диафрагмальное дыхание лёжа — активация тазового дна на выдохе (5 мин)</li>
+        <li><span class="ex-num">2.</span>«Мост» с задержкой — без отрыва лопаток, фокус на ягодицах (3×10)</li>
+        <li><span class="ex-num">3.</span>Скручивание позвоночника лёжа — мягко, без нагрузки на живот</li>
+        <li><span class="ex-num">4.</span>Поза ребёнка с раскрытием бёдер — кошка/корова</li>
+        <li><span class="ex-num">5.</span>Нейтральный таз стоя у стены — выравнивание осанки</li>
+        <li><span class="ex-num">6.</span>Шавасана с малышом на груди — завершение</li>
+      </ul>
+      <div class="baby-note">
+        <strong>🍼 Малыш</strong>
+        Лежит рядом на коврике или на груди мамы во время шавасаны. В момент «моста» — мама поглаживает его ступни. Тактильный контакт стимулирует развитие нервной системы.
+      </div>
+    </div>
+  </div>
+
+  <!-- Workout 2 -->
+  <div class="workout-card">
+    <div class="card-top">
+      <div class="card-num">02</div>
+      <span class="workout-type">Тонизирующая</span>
+      <h3>Сила изнутри — пилатес-основа</h3>
+      <div class="workout-meta">
+        <span class="meta-item"><span class="meta-dot"></span>35–40 минут</span>
+        <span class="meta-item"><span class="meta-dot"></span>Коврик, мяч</span>
+      </div>
+    </div>
+    <div class="card-divider"></div>
+    <div class="card-body">
+      <ul class="exercises-list">
+        <li><span class="ex-num">1.</span>Dead bug (мёртвый жук) — поочерёдное вытягивание рук/ног, кор без диастаза</li>
+        <li><span class="ex-num">2.</span>Clam (ракушка) — лёжа на боку, раскрытие бедра</li>
+        <li><span class="ex-num">3.</span>Bird dog на четвереньках — баланс и стабилизация</li>
+        <li><span class="ex-num">4.</span>Приседания у стены с мячом между колен</li>
+        <li><span class="ex-num">5.</span>Боковая планка с колена — без перегрузки живота</li>
+        <li><span class="ex-num">6.</span>Растяжка грудного отдела — компенсация позы кормления</li>
+      </ul>
+      <div class="baby-note">
+        <strong>🍼 Малыш</strong>
+        Во время Bird dog — малыш лежит под мамой на коврике, мама наклоняется и «гудит» ему — развитие слухового фокуса. В приседаниях (с 4–5 мес.) — держим малыша перед собой, поддерживая голову.
+      </div>
+    </div>
+  </div>
+
+  <!-- Workout 3 -->
+  <div class="workout-card">
+    <div class="card-top">
+      <div class="card-num">03</div>
+      <span class="workout-type">Игровая</span>
+      <h3>Массаж, пение и первые асаны</h3>
+      <div class="workout-meta">
+        <span class="meta-item"><span class="meta-dot"></span>25–30 минут</span>
+        <span class="meta-item"><span class="meta-dot"></span>Коврик, слинг</span>
+      </div>
+    </div>
+    <div class="card-divider"></div>
+    <div class="card-body">
+      <ul class="exercises-list">
+        <li><span class="ex-num">1.</span>Открытие практики — мама в позе лотоса, малыш лицом к ней — дыхание и пение</li>
+        <li><span class="ex-num">2.</span>Йога-массаж малыша: стопы → ноги → живот → руки (10 мин)</li>
+        <li><span class="ex-num">3.</span>Мама в позе кошки/коровы — малыш под мамой смотрит вверх</li>
+        <li><span class="ex-num">4.</span>«Самолётик» — мама лёжа, ноги вертикально, малыш лежит животом на ступнях мамы</li>
+        <li><span class="ex-num">5.</span>Прогулка с малышом в слинге — мама делает медленные выпады</li>
+      </ul>
+      <div class="baby-note">
+        <strong>🍼 Малыш</strong>
+        «Самолётик» — только с 3–4 мес., когда держит голову. Даёт вестибулярную стимуляцию. Йога-массаж улучшает пищеварение и снижает коликки.
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+  </div>
+
+  <!-- PROGRAM 1–3 -->
+
+  <div class="program-section" id="p1">
+    <div class="program-intro">
+      <div>
+        <div class="prog-age-badge">1–3</div>
+        <div class="prog-age-label">года</div>
+      </div>
+      <div class="prog-description">
+        <h3>«Вместе в движении» — малыш уже ходит</h3>
+        <p>Ребёнок начал ходить — и мир для него стал огромным приключением. Он хочет всё трогать, залезать, повторять. Это лучший партнёр для игровой практики! Занятия строятся на коротких сериях с переключением и большом количестве тактильного взаимодействия.</p>
+        <p>Для мамы — время увеличить нагрузку. Добавляем полноценные стоячие позы, баланс, силовые элементы с весом тела.</p>
+        <div class="focus-chips">
+          <span class="chip">Стоячие позы</span>
+          <span class="chip">Баланс</span>
+          <span class="chip">Кор — продвинутый уровень</span>
+          <span class="chip">Ритм и повторение</span>
+          <span class="chip">Координация малыша</span>
+          <span class="chip">Игровой формат</span>
+        </div>
+      </div>
+    </div>
+
+```
+<div class="workouts-grid">
+  <div class="workout-card">
+    <div class="card-top">
+      <div class="card-num">01</div>
+      <span class="workout-type">Восстановительная</span>
+      <h3>Длинные вытяжения и спокойствие</h3>
+      <div class="workout-meta">
+        <span class="meta-item"><span class="meta-dot"></span>35–40 минут</span>
+        <span class="meta-item"><span class="meta-dot"></span>Коврики, кубики</span>
+      </div>
+    </div>
+    <div class="card-divider"></div>
+    <div class="card-body">
+      <ul class="exercises-list">
+        <li><span class="ex-num">1.</span>Поза горы с закрытыми глазами — дыхание и осознанность (3 мин)</li>
+        <li><span class="ex-num">2.</span>Уттанасана (наклон вперёд) с согнутыми коленями — растяжка спины</li>
+        <li><span class="ex-num">3.</span>Поза воина I и II — укрепление ног, открытие таза</li>
+        <li><span class="ex-num">4.</span>Поза треугольника — боковое вытяжение</li>
+        <li><span class="ex-num">5.</span>Балансирующая поза дерева — стойка на одной ноге</li>
+        <li><span class="ex-num">6.</span>Расслабление с малышом — лёжа, малыш на животе мамы</li>
+      </ul>
+      <div class="baby-note">
+        <strong>👶 Малыш (1–3 г.)</strong>
+        Малышу даём «свой коврик» и показываем, как повторять позы. Поза дерева — отличная игра: «стань деревом!» Внимание до 5–7 минут, потом переключаем.
+      </div>
+    </div>
+  </div>
+
+  <div class="workout-card">
+    <div class="card-top">
+      <div class="card-num">02</div>
+      <span class="workout-type">Тонизирующая</span>
+      <h3>Пилатес-силовая с малышом</h3>
+      <div class="workout-meta">
+        <span class="meta-item"><span class="meta-dot"></span>40–45 минут</span>
+        <span class="meta-item"><span class="meta-dot"></span>Коврик, мяч, лента</span>
+      </div>
+    </div>
+    <div class="card-divider"></div>
+    <div class="card-body">
+      <ul class="exercises-list">
+        <li><span class="ex-num">1.</span>Roll-down (прокатка позвоночника стоя) — разминка</li>
+        <li><span class="ex-num">2.</span>Приседания с малышом на руках — 3×12</li>
+        <li><span class="ex-num">3.</span>Выпады с поворотом — мама держит малыша за руки, делают шаг вместе</li>
+        <li><span class="ex-num">4.</span>Планка классическая — малыш «проползает» под мамой</li>
+        <li><span class="ex-num">5.</span>Скручивания с лентой — косые мышцы живота</li>
+        <li><span class="ex-num">6.</span>Прыжки на мяче для мамы / малыш катает мяч</li>
+      </ul>
+      <div class="baby-note">
+        <strong>👶 Малыш (1–3 г.)</strong>
+        «Тоннель» под планкой — восторг для любого малыша. Держим в приседаниях только если ребёнок не против. Прыжки на мяче — параллельное занятие, развивает вестибулярный аппарат.
+      </div>
+    </div>
+  </div>
+
+  <div class="workout-card">
+    <div class="card-top">
+      <div class="card-num">03</div>
+      <span class="workout-type">Игровая</span>
+      <h3>Зверята на коврике</h3>
+      <div class="workout-meta">
+        <span class="meta-item"><span class="meta-dot"></span>25–30 минут</span>
+        <span class="meta-item"><span class="meta-dot"></span>Коврик, игрушки</span>
+      </div>
+    </div>
+    <div class="card-divider"></div>
+    <div class="card-body">
+      <ul class="exercises-list">
+        <li><span class="ex-num">1.</span>«Кошка» — кошка/корова вместе, мама и малыш мяукают</li>
+        <li><span class="ex-num">2.</span>«Собака мордой вниз» — мама держит позу, малыш лезет под неё</li>
+        <li><span class="ex-num">3.</span>«Лев» — поза льва (симхасана) вместе, рычим!</li>
+        <li><span class="ex-num">4.</span>«Бабочка» — поза бабочки сидя, мама + малыш машут «крыльями»</li>
+        <li><span class="ex-num">5.</span>«Черепаха» — мама в позе черепахи, малыш «залезает на панцирь»</li>
+        <li><span class="ex-num">6.</span>Обнимашки в позе ребёнка — завершение</li>
+      </ul>
+      <div class="baby-note">
+        <strong>👶 Малыш (1–3 г.)</strong>
+        Нарративный формат удерживает внимание. Называйте животных, их звуки — это речевое развитие. «Черепаха» с малышом на спине даёт маме нагрузку на спину и тазобедренные.
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+  </div>
+
+  <!-- PROGRAM 3–5 -->
+
+  <div class="program-section" id="p3">
+    <div class="program-intro">
+      <div>
+        <div class="prog-age-badge">3–5</div>
+        <div class="prog-age-label">лет</div>
+      </div>
+      <div class="prog-description">
+        <h3>«Настоящая практика» — ребёнок как партнёр</h3>
+        <p>В возрасте 3–5 лет ребёнок уже способен слушать инструкции, удерживать позу 20–30 секунд и имитировать взрослого. Это возраст настоящей совместной практики — с разговорами, историями и полноценными позами для обоих.</p>
+        <p>Для мамы — полная нагрузка: интенсивный пилатес, силовая йога, динамические связки. Мышечный тонус восстановлен, можно работать в полную силу.</p>
+        <div class="focus-chips">
+          <span class="chip">Силовая йога</span>
+          <span class="chip">Парные позы</span>
+          <span class="chip">Медитация</span>
+          <span class="chip">Баланс и координация</span>
+          <span class="chip">Эмоциональный интеллект</span>
+          <span class="chip">Полный диапазон движений</span>
+        </div>
+      </div>
+    </div>
+
+```
+<div class="workouts-grid">
+  <div class="workout-card">
+    <div class="card-top">
+      <div class="card-num">01</div>
+      <span class="workout-type">Совместная йога</span>
+      <h3>Парные асаны — путешествие вдвоём</h3>
+      <div class="workout-meta">
+        <span class="meta-item"><span class="meta-dot"></span>40–45 минут</span>
+        <span class="meta-item"><span class="meta-dot"></span>Два коврика</span>
+      </div>
+    </div>
+    <div class="card-divider"></div>
+    <div class="card-body">
+      <ul class="exercises-list">
+        <li><span class="ex-num">1.</span>Парное дыхание — сидим спина к спине, чувствуем дыхание друг друга</li>
+        <li><span class="ex-num">2.</span>Поза лодки вдвоём — мама и ребёнок держатся за руки, ноги поднять</li>
+        <li><span class="ex-num">3.</span>Поза воина I — мама страхует ребёнка за таз, показывает баланс</li>
+        <li><span class="ex-num">4.</span>«Качели» — сидим лицом друг к другу, держимся за руки, поочерёдно тянемся</li>
+        <li><span class="ex-num">5.</span>Стойка на руках у стены (мама) — ребёнок «держит» за ноги, смеётся</li>
+        <li><span class="ex-num">6.</span>Парная шавасана — лежим рядом, 5 минут тишины + звуки природы</li>
+      </ul>
+      <div class="baby-note">
+        <strong>🧒 Малыш (3–5 л.)</strong>
+        Парное дыхание развивает эмпатию и телесное осознание. Поза лодки — мощная работа кора для мамы. Ребёнок в этом возрасте гордится тем, что «занимается как взрослый».
+      </div>
+    </div>
+  </div>
+
+  <div class="workout-card">
+    <div class="card-top">
+      <div class="card-num">02</div>
+      <span class="workout-type">Пилатес интенсив</span>
+      <h3>Полная сила — мама работает, малыш помогает</h3>
+      <div class="workout-meta">
+        <span class="meta-item"><span class="meta-dot"></span>45–50 минут</span>
+        <span class="meta-item"><span class="meta-dot"></span>Коврик, эспандер</span>
+      </div>
+    </div>
+    <div class="card-divider"></div>
+    <div class="card-body">
+      <ul class="exercises-list">
+        <li><span class="ex-num">1.</span>Hundred (пилатес-сотня) — малыш считает вслух до 10 повторений</li>
+        <li><span class="ex-num">2.</span>Roll up (прокатка) — ребёнок держит ноги мамы как «якорь»</li>
+        <li><span class="ex-num">3.</span>Side kick (удары ногой лёжа на боку) — малыш повторяет рядом</li>
+        <li><span class="ex-num">4.</span>Swan (лебедь) — прогиб назад, ребёнок залезает на спину</li>
+        <li><span class="ex-num">5.</span>Тяга эспандера стоя — малыш «тянет» другой конец</li>
+        <li><span class="ex-num">6.</span>Прыжки со скакалкой — совместная активность в конце</li>
+      </ul>
+      <div class="baby-note">
+        <strong>🧒 Малыш (3–5 л.)</strong>
+        Счёт вслух — математика и фокус внимания. «Якорь» на ногах мамы — ребёнок чувствует себя важным и нужным. Swan с ребёнком на спине = +12–18 кг нагрузки, отличная работа разгибателей.
+      </div>
+    </div>
+  </div>
+
+  <div class="workout-card">
+    <div class="card-top">
+      <div class="card-num">03</div>
+      <span class="workout-type">Медитация и осознанность</span>
+      <h3>Спокойное тело — спокойный ум</h3>
+      <div class="workout-meta">
+        <span class="meta-item"><span class="meta-dot"></span>30–35 минут</span>
+        <span class="meta-item"><span class="meta-dot"></span>Подушки, свечи</span>
+      </div>
+    </div>
+    <div class="card-divider"></div>
+    <div class="card-body">
+      <ul class="exercises-list">
+        <li><span class="ex-num">1.</span>«Ритуал начала» — зажигаем свечу, садимся, 3 глубоких вдоха вместе</li>
+        <li><span class="ex-num">2.</span>Сканирование тела — мама голосом ведёт, малыш слушает и замечает</li>
+        <li><span class="ex-num">3.</span>Мягкая растяжка с историей — «мы деревья в лесу, ветер нас качает»</li>
+        <li><span class="ex-num">4.</span>Йога-нидра для детей — 10 минут расслабления под голос мамы</li>
+        <li><span class="ex-num">5.</span>«Благодарность» — мама и малыш называют 3 вещи, за которые благодарны</li>
+        <li><span class="ex-num">6.</span>Обнимашки и тихий разговор — закрытие практики</li>
+      </ul>
+      <div class="baby-note">
+        <strong>🧒 Малыш (3–5 л.)</strong>
+        Дети 3–5 лет способны к простой медитации до 5–10 минут. Йога-нидра снижает тревожность и улучшает сон. «Благодарность» формирует позитивное мышление с раннего возраста.
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- SAFETY -->
+
+<section class="safety">
+  <div>
+    <h2>Безопасность — прежде всего</h2>
+    <div class="safety-rules">
+      <div class="rule">
+        <div class="rule-icon">⚕️</div>
+        <div class="rule-text">
+          <h4>Консультация врача обязательна</h4>
+          <p>Перед началом занятий необходимо одобрение гинеколога или акушера-гинеколога. Особенно важно при кесаревом сечении, травмах промежности, диастазе 3 степени.</p>
+        </div>
+      </div>
+      <div class="rule">
+        <div class="rule-icon">🫁</div>
+        <div class="rule-text">
+          <h4>Дыхание — первый приоритет</h4>
+          <p>Никогда не задерживайте дыхание при нагрузке. Выдох — на усилие. Если появляется давление в промежности — упражнение прекратить.</p>
+        </div>
+      </div>
+      <div class="rule">
+        <div class="rule-icon">🚫</div>
+        <div class="rule-text">
+          <h4>Запрещённые движения</h4>
+          <p>До восстановления диастаза: классические скручивания (кранчи), подъём обеих ног лёжа, интенсивные планки, упражнения с «куполом» на животе.</p>
+        </div>
+      </div>
+      <div class="rule">
+        <div class="rule-icon">👶</div>
+        <div class="rule-text">
+          <h4>Безопасность малыша</h4>
+          <p>Все упражнения с малышом — только с поддержкой головы (до 4 мес.). Никаких резких движений. Малыш должен быть сытым, выспавшимся и в хорошем настроении.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="contraindications">
+    <h3>Когда занятия нужно отложить</h3>
+    <ul>
+      <li>Менее 6 недель после естественных родов / 8 недель после кесарева</li>
+      <li>Лохии продолжаются или возобновились</li>
+      <li>Болезненность швов или ощущение натяжения</li>
+      <li>Диастаз прямых мышц 3 степени (щель > 3 пальцев)</li>
+      <li>Пролапс органов малого таза</li>
+      <li>Острые боли в спине или суставах</li>
+      <li>Послеродовая депрессия в активной фазе</li>
+      <li>Малыш болен, капризничает или только что поел</li>
+    </ul>
+  </div>
+</section>
+
+<!-- PRODUCT -->
+
+<section class="product">
+  <h2>Выберите свой формат</h2>
+  <p class="product-sub">Программы доступны в разных форматах — для самостоятельного использования или как профессиональный инструмент тренера</p>
+  <div class="packages">
+    <div class="package">
+      <div class="pack-label">Базовый</div>
+      <div class="pack-price">990 ₽</div>
+      <div class="pack-period">одна возрастная программа</div>
+      <ul class="pack-features">
+        <li><span class="check">✓</span> 3 тренировки с описанием</li>
+        <li><span class="check">✓</span> PDF с иллюстрациями</li>
+        <li><span class="check">✓</span> Памятка по безопасности</li>
+        <li><span class="check" style="opacity:0.3">✓</span> <span style="opacity:0.4">Видео-гайды</span></li>
+      </ul>
+      <button class="pack-btn">Выбрать</button>
+    </div>
+    <div class="package featured">
+      <div class="pack-label">Полная программа</div>
+      <div class="pack-price">2 490 ₽</div>
+      <div class="pack-period">все три возраста</div>
+      <ul class="pack-features">
+        <li><span class="check">✓</span> 9 тренировок для всех возрастов</li>
+        <li><span class="check">✓</span> PDF + видео-инструкции</li>
+        <li><span class="check">✓</span> Гайд по анатомии</li>
+        <li><span class="check">✓</span> Чат поддержки на 1 месяц</li>
+      </ul>
+      <button class="pack-btn">Выбрать</button>
+    </div>
+    <div class="package">
+      <div class="pack-label">Для тренеров</div>
+      <div class="pack-price">7 900 ₽</div>
+      <div class="pack-period">лицензия на ведение групп</div>
+      <ul class="pack-features">
+        <li><span class="check">✓</span> Все материалы + методичка</li>
+        <li><span class="check">✓</span> Право проводить платные группы</span></li>
+        <li><span class="check">✓</span> Брендированные шаблоны</li>
+        <li><span class="check">✓</span> Супервизия 1×1</li>
+      </ul>
+      <button class="pack-btn">Выбрать</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">МамаФлоу</div>
+  <div>Авторская методика йоги и пилатес для мамы с малышом</div>
+  <div>© 2026 — Все права защищены</div>
+</footer>
+
+<script>
+function showProgram(id) {
+  document.querySelectorAll('.program-section').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.age-tab').forEach(el => el.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>
+
+</body>
+</html>
